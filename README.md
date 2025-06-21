@@ -3,7 +3,6 @@
 
 This repository contains detailed step-by-step guides for three fundamental cybersecurity tasks, tested on **Parrot OS** using widely accepted tools and methodologies.
 
----
 
 ## 📌 Task 1: Conduct a Penetration Test on a Web Application
 
@@ -64,9 +63,10 @@ Develop a structured process to detect, contain, respond to, and recover from a 
 
 ### 🧩 Incident Response Phases:
 1. **🔧 Preparation**:
-Assign roles (Incident Commander, Forensic Analyst)
+   
+- Assign roles (Incident Commander, Forensic Analyst)
 
-Prepare tools: rkhunter, chkrootkit, tcpdump, etc.
+- Prepare tools: rkhunter, chkrootkit, tcpdump, etc.
 
 2. **🔎 Detection**:
 
@@ -119,19 +119,20 @@ Strengthen a web application against common attacks by applying security headers
              echo htmlspecialchars($_GET['name'], ENT_QUOTES, 'UTF-8');
 
 4. **✅ Input Validation**:
+
               $email = filter_input(INPUT_POST, 'email', FILTER_VALIDATE_EMAIL);
 
-5. **✅ Enable HTTPS**
+6. **✅ Enable HTTPS**
 
                sudo apt install certbot
                sudo certbot --apache
 
-6. **✅ Scan the Site**
+7. **✅ Scan the Site**
 
                nikto -h http://localhost
                sqlmap -u "http://localhost/page.php?id=1" --dbs
 
-7. **✅ File Permission Hardening**:
+8. **✅ File Permission Hardening**:
 
                chmod 644 *.php
                chmod 755 /var/www/html/
